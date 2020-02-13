@@ -1,12 +1,15 @@
 pipeline{
     agent any
 
+    tools {
+            maven 'apache-maven-3.6.1'
+        }
     stages{
         stage('Compile Stage'){
             steps{
-                 withMaven(maven:'maven_3.6.1'){
-                           sh 'mvn clean compile'
-                 }
+                steps {
+                                sh 'mvn --version'
+                            }
             }
 
         }
