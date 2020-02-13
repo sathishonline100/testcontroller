@@ -6,7 +6,7 @@ pipeline {
 
             steps {
 
-                    bat 'C:\Users\d385090\Downloads\apache-maven-3.5.4-bin\apache-maven-3.5.4\bin\mvn clean compile'
+                    bat 'C:/Users/d385090/Downloads/apache-maven-3.5.4-bin/apache-maven-3.5.4/bin/mvn clean compile'
 
             }
         }
