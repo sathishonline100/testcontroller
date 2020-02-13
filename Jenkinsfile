@@ -5,26 +5,28 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-
-                    bat 'C:/Users/d385090/Downloads/apache-maven-3.5.4-bin/apache-maven-3.5.4/bin/mvn clean compile'
-
+                withMaven(maven : 'maven_3_5_0') {
+                    bat 'mvn clean compile'
+                }
             }
         }
 
         stage ('Testing Stage') {
 
             steps {
+                withMaven(maven : 'maven_3_5_0') {
                     bat 'mvn test'
-
+                }
             }
         }
 
 
         stage ('Deployment Stage') {
             steps {
+                withMaven(maven : 'maven_3_5_0') {
                     bat 'mvn deploy'
                 }
-
+            }
         }
     }
 }
