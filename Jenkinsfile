@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+	
+		stage('Source') { // Get code
+		// get code from our Git repository
+		git 'https://github.com/sathishonline100/testcontroller.git'
+		}
+	
         stage ('Compile Stage') {
 
             steps {
